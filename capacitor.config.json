@@ -1,0 +1,11 @@
+{
+  "appId": "com.servizato.technician",
+  "appName": "Servizato Technician",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
