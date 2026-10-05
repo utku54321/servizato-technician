@@ -3,7 +3,7 @@ import { Icon } from './icons.jsx';
 import {
   slots, getCategory, getProvider, getService, priceFor, money, billFor, providers,
 } from './data.js';
-import { TEAMS, TECH_SHARE } from './shared.js';
+import { TEAMS, TECH_SHARE, syncLabel } from './shared.js';
 import { PARTS, PAST_EARNINGS } from './samples.js';
 
 /* ---------- helpers ---------- */
@@ -579,6 +579,7 @@ export function AccountScreen({ me, actions, install }) {
           </section>
         )}
 
+        <SyncStatus />
         <section className="demo-box">
           <p><strong>Connected demo.</strong> Jobs the provider app assigns to you appear under New requests, including real bookings from the customer app. Your progress (on the way, OTP, parts, photos, completed) shows up for the customer.</p>
           <button type="button" className="btn btn-outline" onClick={actions.reset}>Reset sample jobs</button>
@@ -586,4 +587,10 @@ export function AccountScreen({ me, actions, install }) {
       </div>
     </div>
   );
+}
+
+/* ---------- Cloud sync status ---------- */
+function SyncStatus() {
+  const s = syncLabel();
+  return <p className={'sync-status ' + s.tone} role="status"><span className="sync-dot" aria-hidden="true" />{s.text}</p>;
 }
