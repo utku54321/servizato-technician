@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Servizato Technician",
+    "slug": "servizato-technician",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F5F6F8",
+    "ios": {
+      "bundleIdentifier": "com.servizato.technician",
+      "supportsTablet": false,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.servizato.technician",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0F7A4A"
+      }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Take before and after photos of your work as proof for the customer.",
+          "photosPermission": "Attach job photos from your gallery as proof for the customer.",
+          "microphonePermission": false
+        }
+      ]
+    ]
+  }
+}
